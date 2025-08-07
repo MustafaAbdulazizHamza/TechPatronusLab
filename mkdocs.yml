@@ -1,0 +1,92 @@
+site_name: Tech Patronus Lab
+site_description: The personal website of Mustafa Abdulaziz Hamza
+site_author: Mustafa Abdulaziz Hamza
+repo_url: https://github.com/TechPatronusLab
+repo_name: MustafaAbdulazizHamza
+site_url: https://TechPatronusLab.github.io
+
+theme:
+  name: material
+  logo: assets/logo.png
+  favicon: assets/logo.png
+  palette:
+    - scheme: default
+      primary: deep purple
+      accent: lime
+      toggle:
+        icon: material/weather-night
+        name: Switch to dark theme
+    - scheme: slate
+      primary: indigo
+      accent: amber
+      toggle:
+        icon: material/white-balance-sunny
+        name: Switch to light theme
+  features:
+    - navigation.tabs
+    - navigation.instant
+    - navigation.expand
+    - toc.integrate
+    - content.code.copy
+    - content.code.annotate
+    - content.tabs.link
+    - search.highlight
+    - search.share
+
+nav:
+  - Home: index.md
+  - Tools:
+      - Cerberus: tools/cerberus.md
+      - Fenrir: tools/fenrir.md
+      - ip2mac: tools/ip2mac.md
+      - MeanTCPStream: tools/meanTCPStream.md
+      - Medusa: tools/medusa.md
+      - Pandora CLI: tools/pandora-cli.md
+      - pkt2json: tools/pkt2json.md
+      - TCP_PortScanner: tools/TCP_PortScanner.md
+  - Projects:
+      - Pandora Project: projects/pandora.md
+      - RingShell Project: projects/ringshell.md
+  - Presentations:
+      - Application Layer 01: presentations/application_layer01.md
+      - Application Layer 02: presentations/application_layer02.md
+      - Attack on Pandora: presentations/pandora-bruteforced.md
+      - DoS and DDoS Attacks: presentations/dos-and-ddos-attacks.md
+      - Logs Analysis: presentations/logs-analysis.md
+      - Pandora Secrets Management: presentations/pandora.md
+      - RingShell C2 Project: presentations/RingShell-C2-Project.md
+  - About: about.md
+
+markdown_extensions:
+  - admonition
+  - codehilite
+  - toc:
+      permalink: true
+  - footnotes
+  - meta
+  - tables
+  - pymdownx.superfences
+  - pymdownx.details
+  - pymdownx.tabbed:
+      alternate_style: true
+  - pymdownx.highlight
+  - pymdownx.inlinehilite
+  - pymdownx.critic
+  - pymdownx.magiclink
+  - pymdownx.tasklist:
+      custom_checkbox: true
+
+extra:
+  social:
+    - icon: fontawesome/brands/github
+      link: https://github.com/MustafaAbdulazizHamza
+    - icon: fontawesome/brands/linkedin
+      link: https://www.linkedin.com/in/mustafa-abdulaziz-hamza-44b727276/
+    - icon: fontawesome/brands/kaggle
+      link: https://www.kaggle.com/muscyb2004
+  footer:
+    contact:
+      Email: mustafa.abdulaziz.hamza@gmail.com
+      Telegram Channel: https://t.me/techpatronuslab
+      GitHub: https://github.com/MustafaAbdulazizHamza
+      Location: Iraq
