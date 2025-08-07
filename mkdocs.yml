@@ -1,9 +1,9 @@
 site_name: Tech Patronus Lab
 site_description: The personal website of Mustafa Abdulaziz Hamza
 site_author: Mustafa Abdulaziz Hamza
-repo_url: https://github.com/TechPatronusLab
+repo_url: https://github.com/MustafaAbdulazizHamza
 repo_name: MustafaAbdulazizHamza
-site_url: https://TechPatronusLab.github.io
+site_url: https://mustafaabdulazizhamza.github.io/TechPatronusLab/
 
 theme:
   name: material
