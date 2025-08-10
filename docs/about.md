@@ -26,32 +26,27 @@ I am a motivated Cybersecurity and Cloud Computing Engineer with hands-on expert
 ## Skills
 
 ### Cybersecurity & Network Defense
-
-- Intrusion Detection Systems (Suricata, Zeek)  
-- Log Analysis and SIEM (ELK Stack)  
-- Packet Analysis and Network Forensics  
-- IDS/IPS Engineering (SEC503-level)  
-- AI for Cybersecurity (SEC595-level)  
+- **Intrusion Detection / Network Monitoring:** Suricata, Zeek  
+- **Log Analysis & SIEM:** ELK Stack (Elasticsearch, Logstash, Kibana)  
+- **Packet Analysis & Network Forensics**  
+- **IDS / IPS Engineering:** SEC503-level
+- **AI for Cybersecurity:** SEC595-level
 
 ### Cloud & Infrastructure
+- **Cloud:** AWS (Cloud Practitioner level)  
+- **Version Control & Collaboration:** Git, GitHub  
+- **Infrastructure as Code:** Ansible  
+- **Containerization:** Docker
 
-- AWS (Cloud Practitioner-level)  
-- Infrastructure as Code (Ansible)  
-- Containerization (Docker)  
+### Programming & Scripting
+- **Languages:** Python · Golang · AWK (text processing)  
 
-### Programming
-
-- Python  
-- Golang  
-- AWK (Text Processing)  
-
-### Python Ecosystem
-
-- Machine Learning & AI: scikit-learn, TensorFlow  
-- LLM Orchestration: LangChain  
-- Web Scraping: Requests, BeautifulSoup, Scrapy  
-- Networking & Cybersecurity: Scapy, socket, requests  
-- Data Analysis: NumPy, pandas, matplotlib  
+### Python Ecosystem & Libraries
+- **Networking & Security:** Scapy, socket, PyShark, etc.
+- **Machine Learning & AI:** scikit-learn, TensorFlow  
+- **LLM Orchestration:** LangChain  
+- **Web Scraping:** requests, BeautifulSoup, Scrapy  
+- **Data Handling & Analysis:** NumPy, pandas, matplotlib
 
 ---
 
