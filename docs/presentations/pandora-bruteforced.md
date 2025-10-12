@@ -1,5 +1,5 @@
 # Bruteforce Attack on Pandora
-> Presented at NTU — 16 December 2025.
+> Presented at NTU — 16 December 2024.
 === "Abstract"
     This presentation explores the use of the Cerberus and Fenrir tools to conduct basic penetration testing against a Pandora server instance, demonstrating vulnerabilities and potential attack vectors.
 

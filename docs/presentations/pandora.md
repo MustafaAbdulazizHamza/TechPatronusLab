@@ -1,6 +1,6 @@
 # Pandora Secrets Management System
 
-> Presented at NTU August 2025
+> Presented at NTU - 9 December 2024
 
 === "Abstract"
     This presentation introduces the Pandora Secrets Management System, a Golang-based, containerized HTTPS server designed to securely receive, store, and serve encrypted secrets. It authenticates clients using Basic Authentication and delivers the secrets to their respective owner scripts over a secure channel.

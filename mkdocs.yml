@@ -55,6 +55,7 @@ nav:
       - Logs Analysis: presentations/logs-analysis.md
       - Pandora Secrets Management: presentations/pandora.md
       - RingShell C2 Project: presentations/RingShell-C2-Project.md
+      - AI As Magic: presentations/data-driven-security.md
   - About: about.md
 
 markdown_extensions:
