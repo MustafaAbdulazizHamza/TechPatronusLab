@@ -55,7 +55,7 @@
         bpreds = classify(bodies, body_model, body_tokenizer)
         return spreds[0], bpreds[0]
 
-    app = FastAPI(title="E", version="1.0.0")
+    app = FastAPI(title="Nightshade Filter: An E-mail Phishing Detection API", version="1.0.0")
     def load_config(path="config.yaml"):
         with open(path, "r") as f:
             config = yaml.safe_load(f)
