@@ -5,7 +5,7 @@
     Pandora aims to offer an efficient and streamlined solution for securely managing secrets in DevOps workflows.
 
 === "Code"
-    ``` golang title="" linenums="1"
+    ``` golang title="main.go" linenums="1"
     package main
 
     import (
