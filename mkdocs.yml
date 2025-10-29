@@ -43,6 +43,7 @@ nav:
       - Medusa: tools/medusa.md
       - Pandora CLI: tools/pandora-cli.md
       - pkt2json: tools/pkt2json.md
+      - Scapyfy-CLI: tools/scapyfy-cli.md
       - TCP_PortScanner: tools/TCP_PortScanner.md
   - Projects:
       - Pandora Project: projects/pandora.md
