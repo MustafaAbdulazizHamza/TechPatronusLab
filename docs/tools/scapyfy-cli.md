@@ -1,4 +1,4 @@
-# TCP_PortScanner
+# Scapyfy CLI
 
 === "Description"
     **Scapyfy CLI** is a cross-platform command-line interface (CLI) tool designed to be an HTTP client for the **Scapyfy packet crafting agent**. Developed in **Go (Golang)** and utilizing the **Cobra library** for command parsing, it offers a simple, powerful way to interact with the Scapyfy API.
