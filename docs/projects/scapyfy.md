@@ -303,7 +303,7 @@
     ### 📝 Notes
 
     1.  **API Documentation:** The full API documentation is available at the `/docs` endpoint after execution.
-    2.  **CLI Tool:** To interact with Scapyfy from your terminal, you can use the dedicated command-line tool, **Scapyfy-CLI**, available [here](https://github.com/MustafaAbdulazizHamza/Scapyfy-CLI).
+    2.  **CLI Tool:** To interact with Scapyfy from your terminal, you can use the dedicated command-line tool, **Scapyfy-CLI**, available [here](https://mustafaabdulazizhamza.github.io/TechPatronusLab/tools/scapyfy-cli/#__tabbed_1_1)).
 
 === "Download"
     [![GitHub](https://img.shields.io/badge/Source-GitHub-blue)](https://github.com/MustafaAbdulazizHamza/Scapyfy)
