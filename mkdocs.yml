@@ -48,6 +48,7 @@ nav:
       - Pandora Project: projects/pandora.md
       - RingShell Project: projects/ringshell.md
       - Nightshade Filter: projects/nightshade-filter.md
+      - Scapyfy: projects/scapyfy.md
   - Presentations:
       - Application Layer 01: presentations/application_layer01.md
       - Application Layer 02: presentations/application_layer02.md
