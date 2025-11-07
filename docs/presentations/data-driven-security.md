@@ -3,7 +3,7 @@
 === "Abstract"
     This presentation outlines the importance of data-driven security and explores an important example that demonstrates the ability to apply machine learning to different types of data for cybersecurity purposes.
 === "Download"
-    📄 [Download PDF](https://drive.google.com/file/d/1omVpSlRqD2znpqN_ESrkIYIfbt_S94P5/view?usp=sharing)
+    📄 [Download PDF](https://drive.google.com/file/d/1XK4htLUkwAxkLV9FWbsVnqywm3YbCiDl/view?usp=drive_link)
     
 
 === "Related Links"
