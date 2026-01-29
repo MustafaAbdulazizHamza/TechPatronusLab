@@ -31,6 +31,7 @@ I am a motivated Cybersecurity and Cloud Computing Engineer with hands-on expert
 - **Packet Analysis & Network Forensics**  
 - **IDS / IPS Engineering:** SEC503-level
 - **AI for Cybersecurity:** SEC595-level
+- **Web Penetration Testing:** SEC542-level
 
 ### Cloud & Infrastructure
 - **Cloud:** AWS (Cloud Practitioner level)  
@@ -55,5 +56,5 @@ I am a motivated Cybersecurity and Cloud Computing Engineer with hands-on expert
 - **RingShell** – Golang Command and Control (C2) Framework  
   Developed a remote management tool for cybersecurity operations.
 
-- **Pandora** – HTTPS Secrets Management System  
-  Built a secure, encrypted service for storing credentials with authenticated access.
+- **Scapyfy** – AI-Powered Network Security Toolkit  
+  Built a toolkit that combines LLM intelligence with powerful packet crafting capabilities. It provides both an LLM agent for automated network analysis and direct tool access.
