@@ -261,7 +261,10 @@
 
     ### Features
     ---
-
+    ### AI-Powered Network Tools
+    - **LLM Agent** - Automated network analysis and reporting
+    - **AI-assistant** - Interactive chat interface for network analysis in direct tool access mode.
+    
     ### Multi-LLM Support
     - **OpenAI** (GPT-3.5, GPT-4)
     - **Google Gemini** (Gemini 1.5 Flash/Pro)
