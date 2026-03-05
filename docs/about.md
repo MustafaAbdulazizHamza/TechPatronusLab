@@ -31,6 +31,7 @@ I am a motivated Cybersecurity and Cloud Computing Engineer with hands-on expert
 - **Packet Analysis & Network Forensics**  
 - **IDS / IPS Engineering:** SEC503-level
 - **AI for Cybersecurity:** SEC595-level
+- **AI Red Teaming**
 - **Web Penetration Testing:** SEC542-level
 
 ### Cloud & Infrastructure

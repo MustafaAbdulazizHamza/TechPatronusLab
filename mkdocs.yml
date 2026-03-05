@@ -59,6 +59,7 @@ nav:
       - Pandora Secrets Management: presentations/pandora.md
       - RingShell C2 Project: presentations/RingShell-C2-Project.md
       - AI As Magic: presentations/data-driven-security.md
+      - AI in Cyber Defense: presentations/AI_in_Cyberdefense.md
   - About: about.md
 
 markdown_extensions:
