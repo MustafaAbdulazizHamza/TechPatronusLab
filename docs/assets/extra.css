@@ -1,0 +1,59 @@
+/* =========================================
+   Footer — icon-only contact bar
+   ========================================= */
+
+.md-footer-meta__inner {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.75rem;
+  padding: 1.25rem 1rem;
+}
+
+/* Icon row — footer & about page */
+.footer-icons,
+.contact-icons {
+  display: flex;
+  align-items: center;
+  gap: 0.85rem;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.footer-icon-link {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 1.5rem;
+  height: 1.5rem;
+  opacity: 0.6;
+  color: inherit;
+  transition: opacity 0.2s, transform 0.2s;
+}
+
+.footer-icon-link:hover {
+  opacity: 1;
+  transform: translateY(-2px);
+}
+
+.footer-icon-link svg,
+.footer-icon-link i {
+  width: 1.1rem;
+  height: 1.1rem;
+  fill: currentColor;
+}
+
+/* HuggingFace img — invert in dark mode */
+[data-md-color-scheme="slate"] {
+  --hf-filter: invert(1);
+}
+[data-md-color-scheme="default"] {
+  --hf-filter: none;
+}
+
+/* Copyright */
+.footer-copyright {
+  font-size: 0.72rem;
+  opacity: 0.4;
+  text-align: center;
+}

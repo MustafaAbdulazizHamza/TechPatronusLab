@@ -7,6 +7,7 @@ site_url: https://mustafaabdulazizhamza.github.io/TechPatronusLab/
 
 theme:
   name: material
+  custom_dir: overrides
   logo: assets/logo.png
   favicon: assets/logo.png
   palette:
@@ -60,6 +61,7 @@ nav:
       - RingShell C2 Project: presentations/RingShell-C2-Project.md
       - AI As Magic: presentations/data-driven-security.md
       - AI in Cyber Defense: presentations/AI_in_Cyberdefense.md
+      - Zeek Scripting: presentations/zeek_scripting.md
   - About: about.md
 
 markdown_extensions:
@@ -81,17 +83,8 @@ markdown_extensions:
   - pymdownx.tasklist:
       custom_checkbox: true
 
-extra:
-  social:
-    - icon: fontawesome/brands/github
-      link: https://github.com/MustafaAbdulazizHamza
-    - icon: fontawesome/brands/linkedin
-      link: https://www.linkedin.com/in/mustafa-abdulaziz-hamza-44b727276/
-    - icon: fontawesome/brands/kaggle
-      link: https://www.kaggle.com/muscyb2004
-  footer:
-    contact:
-      Email: mustafa.abdulaziz.hamza@gmail.com
-      Telegram Channel: https://t.me/techpatronuslab
-      GitHub: https://github.com/MustafaAbdulazizHamza
-      Location: Iraq
+
+
+extra_css:
+  - assets/extra.css
+  - https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css
