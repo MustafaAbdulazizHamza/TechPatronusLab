@@ -1,6 +1,6 @@
 # Nightshade Filter Project
 === "Description"
-    Nightshade is a phishing detection API that leverages state-of-the-art DeBERTa transformer models to analyze both email subjects and bodies. Named after the deadly nightshade plant from the Addams Family aesthetic, this system provides robust protection against phishing attacks through secure, authenticated endpoints.
+    Nightshade is a phishing detection API that leverages state-of-the-art DistilBERT transformer models to analyze both email subjects and bodies. Named after the deadly nightshade plant from the Addams Family aesthetic, this system provides robust protection against phishing attacks through secure, authenticated endpoints.
 
 === "Code"
     ```python linenums="1" title="NightshadeFilter.py"
@@ -15,8 +15,8 @@
     from datetime import datetime, timedelta
     import jwt
     import yaml
-    BODY_MODEL_NAME = "mustafaAbdulazizHamza/deberta-phishing-detector-body"
-    SUBJECT_MODEL_NAME = "mustafaAbdulazizHamza/deberta-phishing-detector-subject"
+    BODY_MODEL_NAME = "mustafaAbdulazizHamza/DistilBERT-phishing-detector-body"
+    SUBJECT_MODEL_NAME = "mustafaAbdulazizHamza/DistilBERT-phishing-detector-subject"
 
     body_tokenizer = AutoTokenizer.from_pretrained(BODY_MODEL_NAME)
     body_model     = AutoModelForSequenceClassification.from_pretrained(BODY_MODEL_NAME)
@@ -205,7 +205,7 @@
 
 === "Documentation"
     ## Overview
-    Nightshade is an advanced phishing detection API that leverages state-of-the-art DeBERTa transformer models to analyze both email subjects and bodies. Named after the deadly nightshade plant from the Addams Family aesthetic, this system provides robust protection against phishing attacks through secure, authenticated endpoints.
+    Nightshade is an advanced phishing detection API that leverages state-of-the-art DistilBERT transformer models to analyze both email subjects and bodies. Named after the deadly nightshade plant from the Addams Family aesthetic, this system provides robust protection against phishing attacks through secure, authenticated endpoints.
     Key Features:
     - JWT-based authentication for secure API access
 
@@ -217,11 +217,11 @@
 
     - Batch processing support for multiple emails
 
-    - High accuracy using fine-tuned DeBERTa models
+    - High accuracy using fine-tuned DistilBERT models
 
     YAML configuration for easy deployment management
     ## Models
-    Two fine-tuned DeBERTa models were employed for email classification, both trained on the Phishing Email Curated Datasets from Zenodo. The first model was trained for body classification and achieved an F1 score of 0.99, while the second model was trained for subject line classification with an F1 score of 0.95.
+    Two fine-tuned DistilBERT models were employed for email classification, both trained on the Phishing Email Curated Datasets from Zenodo. The first model was trained for body classification and achieved an F1 score of 0.99, while the second model was trained for subject line classification with an F1 score of 0.95.
     ## Quick Start
     ### Prerequisites
     1. Python 3.11+
@@ -265,7 +265,7 @@
     ```
     ## Notes
     - API documentation is available at the /docs endpoint.
-    - The fine-tuned DeBERTa models are available on Hugging Face in my account at [this link](https://huggingface.co/mustafaAbdulazizHamza)
+    - The fine-tuned DistilBERT models are available on Hugging Face in my account at [this link](https://huggingface.co/mustafaAbdulazizHamza)
 
 === "Download"
     [![GitHub](https://img.shields.io/badge/Source-GitHub-blue)](https://github.com/MustafaAbdulazizHamza/Nightshade-Filter)
